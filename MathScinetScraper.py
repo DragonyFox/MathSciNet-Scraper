@@ -75,4 +75,4 @@ df = pd.DataFrame(df, columns=["Name", "MR Author ID", "Earliest Indexed Publica
 
 df.set_index("Name", inplace=True)
 
-df.to_csv("output.csv")
+df.to_csv("mathscinet-output.csv")
