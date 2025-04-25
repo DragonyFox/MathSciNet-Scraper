@@ -56,6 +56,7 @@ for name in names :
   time.sleep(2)
 
   if "authorId=" in driver.current_url :
+    WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, ".author-title-margin > span:nth-child(1)")))
     append_information()
 
 
@@ -64,7 +65,7 @@ for name in names :
     multiple_urls = [element.get_attribute('href') for element in elements]
     for url in multiple_urls :
       driver.get(url)
-      time.sleep(2)
+      WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, ".author-title-margin > span:nth-child(1)")))
       append_information()
 
 
