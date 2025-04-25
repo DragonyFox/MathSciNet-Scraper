@@ -63,8 +63,8 @@ for name in names :
   else :
     elements = driver.find_elements(By.CSS_SELECTOR, "tr.results > td:nth-child(1) > a:nth-child(1)")
     multiple_urls = [element.get_attribute('href') for element in elements]
-    for url in multiple_urls :
-      driver.get(url)
+    for urls in multiple_urls :
+      driver.get(urls)
       WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, ".author-title-margin > span:nth-child(1)")))
       append_information()
 
